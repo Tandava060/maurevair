@@ -1,0 +1,42 @@
+<div style="margin:0rem 2rem 2.5rem 2rem;">
+    <h2 mat-dialog-title style="text-align: center;color: #3f51b5;">Reservation For Flight No {{flight.flightNo}}</h2>
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Origin</mat-label>
+            <input matInput formControlName="flightOrigin">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Destination</mat-label>
+            <input matInput formControlName="flightDestination">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Time</mat-label>
+            <input matInput formControlName="time">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Seat Type</mat-label>
+            <mat-select formControlName="seatType">
+                <mat-option *ngFor="let seat of flight.seats" [value]="seat.id">{{seat.class}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="hasError('seatType','required')">
+                Seat Type is required.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Number of Seats</mat-label>
+            <input type="number" matInput formControlName="noOfSeats">
+            <mat-error *ngIf="hasError('noOfSeats','max')">
+                Number of seats exceeds availability.
+            </mat-error>
+            <mat-error *ngIf="hasError('noOfSeats','required')">
+                Number of seats is required.
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button extended color="primary">Make Reservation</button>
+    </form>
+</div>

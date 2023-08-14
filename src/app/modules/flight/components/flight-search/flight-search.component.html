@@ -1,0 +1,32 @@
+<div>
+    <form [formGroup]="flightSearchForm" class="form-layout">
+        <mat-form-field  appearance="outline" class="field-margin-right">
+            <mat-select formControlName="origin" placeholder="Origin" #singleSelect>
+              <mat-option>
+                <ngx-mat-select-search noEntriesFoundLabel="No options available" closeIcon placeholderLabel="Search origin" formControlName="searchOrigin"></ngx-mat-select-search>
+              </mat-option>
+              <mat-option *ngFor="let airport of origin$ | async" [value]="airport">
+                {{airport.country}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="flightSearchForm.controls.origin.hasError('required') && flightSearchForm">
+                Origin is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="field-margin-right">
+            <mat-select formControlName="destination" placeholder="Destination" #singleSelect>
+              <mat-option>
+                <ngx-mat-select-search noEntriesFoundLabel="No options available" closeIcon placeholderLabel="Search Destination" formControlName="searchDestination"></ngx-mat-select-search>
+              </mat-option>
+              <mat-option *ngFor="let airport of destination$ | async" [value]="airport">
+                {{airport.country}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="flightSearchForm.controls.destination.hasError('required')">
+                Destination is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button extended color="primary" (click)="searchFlights()">Search Flights</button>
+    </form>
+</div>

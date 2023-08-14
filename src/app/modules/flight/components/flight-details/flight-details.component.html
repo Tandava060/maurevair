@@ -1,0 +1,26 @@
+<mat-card [appearance]="'outlined'" class="flight-card">
+
+    <mat-card-header>
+      <mat-card-title>{{ flight.name }} - Flight No: {{ flight.flightNo }}</mat-card-title>
+      <button mat-stroked-button color="primary" (click)="openReservationForm()">Book Now</button>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p class="flight-info">From: {{ flight.origin }}</p>
+      <p class="flight-info">To: {{ flight.destination }}</p>
+      <div style="display: flex;gap: 4rem;">
+        <p class="flight-info">Departure: {{ flight.departureTime | date: 'short' }}</p>
+        <p class="flight-info">Arrival: {{ flight.arrivalTime | date: 'short' }}</p>
+      </div>
+      
+      <div class="booking-info-container">
+        <p class="flight-info">Available Seats:</p>
+        <mat-chip-listbox class="mat-chip-list">
+          <mat-chip color="accent"  *ngFor="let seat of flight.seats">
+              {{ seat.class }} - {{ seat.available > 0 ? seat.available : "Unavailable" }}
+          </mat-chip>
+      </mat-chip-listbox>
+      </div>
+    </mat-card-content>
+
+  </mat-card>

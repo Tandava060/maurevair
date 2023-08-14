@@ -1,0 +1,166 @@
+{
+  "airports": [
+    {
+      "id": 1,
+      "name": "Sir Seewoosagur Ramgoolam International Airport",
+      "country": "Mauritius",
+      "city": "Plaine Magnien"
+    },
+    {
+      "id": 2,
+      "name": "London Gatwick Airport",
+      "country": "England",
+      "city": "Kent"
+    },
+    {
+      "id": 3,
+      "name": "Charles de Gaulle Airport",
+      "country": "France",
+      "city": "Paris"
+    },
+    {
+      "id": 4,
+      "name": "Plaine Corail Airport",
+      "country": "Rodrigues",
+      "city": "Plaine Corail"
+    }
+  ],
+  "flights": [
+    {
+      "id": 1,
+      "flightNo": "2",
+      "name": "Air Mauritius",
+      "originId": 1,
+      "destinationId": 2,
+      "departureTime": "2023-09-01T11:00:00.000+04:00",
+      "arrivalTime": "2023-09-02T23:22:00.000+02:00",
+      "seats": [
+        {
+          "id": 1,
+          "class": "First",
+          "available": 4
+        },
+        {
+          "id": 2,
+          "class": "PremiumEconomy",
+          "available": 10
+        },
+        {
+          "id": 3,
+          "class": "Economy",
+          "available": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "flightNo": "3",
+      "name": "Air Maureva",
+      "originId": 1,
+      "destinationId": 2,
+      "departureTime": "2023-10-01T12:00:00.000+04:00",
+      "arrivalTime": "2023-11-02T23:21:00.000+02:00",
+      "seats": [
+        {
+          "id": 1,
+          "class": "First",
+          "available": 10
+        },
+        {
+          "id": 2,
+          "class": "PremiumEconomy",
+          "available": 10
+        },
+        {
+          "id": 4,
+          "class": "Business",
+          "available": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "flightNo": "4",
+      "name": "Air Maureva",
+      "originId": 1,
+      "destinationId": 3,
+      "departureTime": "2023-12-01T12:00:00.000+04:00",
+      "arrivalTime": "2023-14-02T23:21:00.000+02:00",
+      "seats": [
+        {
+          "id": 1,
+          "class": "First",
+          "available": 10
+        },
+        {
+          "id": 2,
+          "class": "PremiumEconomy",
+          "available": 10
+        },
+        {
+          "id": 4,
+          "class": "Business",
+          "available": 3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "flightNo": "6",
+      "name": "Air Maureva",
+      "originId": 2,
+      "destinationId": 3,
+      "departureTime": "2023-12-01T12:00:00.000+04:00",
+      "arrivalTime": "2023-14-02T23:21:00.000+02:00",
+      "seats": [
+        {
+          "id": 1,
+          "class": "First",
+          "available": 10
+        }
+      ]
+    }
+  ],
+  "reservations": [
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 1,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 1,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "flightId": 1,
+      "seatId": 2,
+      "noOfSeats": 1,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 1,
+      "userId": 1,
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$QivyTA225ShazYLrDmvhpOfu.yZ6/v7G.dCtix2y1xGmHBKC8OePO",
+      "id": 1
+    },
+    {
+      "email": "appadooashwin@gmail.com",
+      "password": "$2a$10$RawGD2Wyu53wFBVXoRHIHueJ/8fVd0inKZ0dXqZy.Lo1Mdv3o3hm2",
+      "id": 2
+    }
+  ]
+}

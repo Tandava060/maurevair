@@ -1,0 +1,12 @@
+{
+  "flight": [
+    {
+      "id": 1,
+      "name": "Air Maureva"
+    },
+    {
+      "id": 2,
+      "name": "Air Mauritius"
+    }
+  ]
+}

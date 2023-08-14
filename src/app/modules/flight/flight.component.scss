@@ -1,0 +1,33 @@
+
+/* Container for the list of flights */
+.flight-container {
+  margin: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.message {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  margin-top: 5rem;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .flight-container {
+      margin: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flight-container {
+      margin: 10px;
+  }
+}
