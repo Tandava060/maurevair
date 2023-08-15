@@ -1,0 +1,25 @@
+.login-container {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    box-shadow: -1px 5px 20px -3px rgba(146, 146, 146, 0.75);
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.login-form {
+    width: 300px;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}

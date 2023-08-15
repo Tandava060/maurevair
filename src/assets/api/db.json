@@ -38,7 +38,7 @@
         {
           "id": 1,
           "class": "First",
-          "available": 4
+          "available": 1
         },
         {
           "id": 2,
@@ -64,7 +64,7 @@
         {
           "id": 1,
           "class": "First",
-          "available": 10
+          "available": 5
         },
         {
           "id": 2,
@@ -95,7 +95,7 @@
         {
           "id": 2,
           "class": "PremiumEconomy",
-          "available": 10
+          "available": 5
         },
         {
           "id": 4,
@@ -149,6 +149,86 @@
       "noOfSeats": 1,
       "userId": 1,
       "id": 4
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 3,
+      "id": 5
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 1,
+      "id": 6
+    },
+    {
+      "flightId": 1,
+      "seatId": 2,
+      "noOfSeats": 1,
+      "id": 7
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 1,
+      "id": 8
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 1,
+      "userId": 2,
+      "id": 9
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 3,
+      "userId": 2,
+      "id": 10
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 3,
+      "userId": 2,
+      "id": 11
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 2,
+      "userId": 2,
+      "id": 12
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 1,
+      "userId": 2,
+      "id": 13
+    },
+    {
+      "flightId": 2,
+      "seatId": 1,
+      "noOfSeats": 5,
+      "userId": 2,
+      "id": 14
+    },
+    {
+      "flightId": 3,
+      "seatId": 2,
+      "noOfSeats": 5,
+      "userId": 2,
+      "id": 15
+    },
+    {
+      "flightId": 3,
+      "seatId": 2,
+      "noOfSeats": 5,
+      "userId": 2,
+      "id": 16
     }
   ],
   "users": [

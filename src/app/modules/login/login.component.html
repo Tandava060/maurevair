@@ -1,0 +1,22 @@
+<section class="login-container">
+    
+    <form class="login-form card" [formGroup]="loginForm">
+        <h3>MaurevAir</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email" placeholder="E.g joe@gmail.com">
+            <mat-error>
+                <span *ngIf="isFieldValid('email', 'required')">Email is required</span>
+                <span *ngIf="isFieldValid('email', 'email')">Email is not valid</span>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" placeholder="*****">
+            <mat-error *ngIf="isFieldValid('password', 'required')">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Login</button>
+    </form>
+</section>

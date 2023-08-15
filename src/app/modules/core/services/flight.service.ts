@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { catchError, map, mergeMap, tap } from 'rxjs/operators';
 import { Flight } from '../models/flight.model';
 import { FlightApi } from '../models/flight-api.model';
 import { AirportService } from './airport.service';
@@ -16,12 +16,11 @@ export class FlightService {
   flights$$ = new BehaviorSubject<Flight[]>([]);
   flights$ = this.flights$$.asObservable();
 
-  constructor(private readonly http: HttpClient, private readonly airportService: AirportService, private readonly loadingService: LoadingService) {}
-
+  constructor(private readonly http: HttpClient, private readonly airportService: AirportService, private readonly loadingService: LoadingService) { }
 
   getFlights(originId: number, destinationId: number) {
     this.loadingService.show();
-   this.airportService.getAirports().pipe(
+    this.airportService.getAirports().pipe(
       mergeMap(airports => this.http.get<FlightApi[]>(`${this.flightApiUrl}?originId=${originId}&destinationId=${destinationId}`).pipe(
         map(flights => flights.map(flight => {
           const originAirport = airports.find(airport => airport.id === flight.originId);
@@ -37,7 +36,21 @@ export class FlightService {
       flights => {
         this.flights$$.next(flights)
         this.loadingService.stop();
-      } 
-      );
+      }
+    );
+  }
+
+  updateFlight(flight: Flight, seatId: number, noSeats: number) {
+    const seatToUpdate = flight.seats.find(seat => seat.id === seatId);
+    if (seatToUpdate) {
+      seatToUpdate.available = seatToUpdate.available - noSeats;
+    }
+    return this.http.patch<Flight>(`${this.flightApiUrl}/${flight.id}`, { seats: flight.seats }).pipe(
+      catchError((err) => {
+        if (seatToUpdate) {
+          seatToUpdate.available = seatToUpdate.available + noSeats
+        }
+        return err;
+      }));
   }
 }
