@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../core/services/auth.service';
-import { UserLogin } from '../core/models/user.model';
+import { UserLogin } from '../core/models/user/user.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,11 +14,10 @@ export class LoginComponent {
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
-  
+
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
 
-  onSubmit() { 
-    console.log(this.loginForm.value);
+  onSubmit() {
     this.authService.login(this.loginForm.value as UserLogin).subscribe(() => {
       this.router.navigate(['/']);
     });

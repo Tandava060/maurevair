@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { User, UserLogin } from '../models/user.model';
+import { User, UserLogin } from '../models/user/user.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import jwt_decode from "jwt-decode";
@@ -18,7 +18,6 @@ export class AuthService {
 
   refreshUser(): void {
     const jsonUser = localStorage.getItem('user')
-    console.log(jsonUser);
     if (!jsonUser) {
       this.user$$.next(null);
       this.router.navigate(['/login']);
@@ -42,7 +41,6 @@ export class AuthService {
   }
 
   public get currentUserValue(): User {
-    console.log(this.user$$.value);
     return this.user$$.value!;
   }
 

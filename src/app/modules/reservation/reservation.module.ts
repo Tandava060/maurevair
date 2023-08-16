@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 
 import { ReservationRoutingModule } from './reservation-routing.module';
-import { NewReservationFormComponent } from './new-reservation-form/new-reservation-form.component';
+import { NewReservationFormComponent } from './components/new-reservation-form/new-reservation-form.component';
 import { SharedModule } from '../shared/shared.module';
+import { UserReservationsComponent } from './components/user-reservations/user-reservations.component';
 
 
 @NgModule({
   declarations: [
-    NewReservationFormComponent
+    NewReservationFormComponent,
+    UserReservationsComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   exports: [
-    NewReservationFormComponent
+    NewReservationFormComponent,
+    UserReservationsComponent
   ],
   providers: [DatePipe],
 })

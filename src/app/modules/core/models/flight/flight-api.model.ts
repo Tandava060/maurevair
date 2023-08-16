@@ -1,4 +1,4 @@
-import { Seat } from "./booking-info.model";
+import { Seat } from "./seat.model";
 
 export interface FlightApi {
   id: number;

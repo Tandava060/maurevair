@@ -1,0 +1,25 @@
+.reservation-card {
+  margin: 20px;
+
+  mat-card-title {
+    color: #3f51b5;
+  }
+
+}
+
+.reservation-info {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.reservation-time {
+  display: flex;
+  gap: 4rem;
+}
+
+@media (max-width: 768px) {
+  .reservation-time {
+    display: block;
+  }
+}

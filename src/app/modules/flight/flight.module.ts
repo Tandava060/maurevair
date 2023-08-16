@@ -20,6 +20,9 @@ import { ReservationModule } from '../reservation/reservation.module';
     FlightRoutingModule,
     SharedModule,
     ReservationModule
+  ],
+  exports: [
+    FlightComponent
   ]
 })
 export class FlightModule { }

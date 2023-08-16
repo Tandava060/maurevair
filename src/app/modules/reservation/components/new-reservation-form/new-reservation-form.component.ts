@@ -1,13 +1,13 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, ValidationErrors, Validators } from '@angular/forms';
-import { Flight } from '../../core/models/flight.model';
+import { Flight } from '../../../core/models/flight/flight.model';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DatePipe } from '@angular/common';
-import { NewReservation } from '../models/new-reservation.model';
-import { ReservationService } from '../../core/services/reservation.service';
-import { AuthService } from '../../core/services/auth.service';
-import { SnackbarService } from '../../core/services/snackbar.service';
-import { FlightService } from '../../core/services/flight.service';
+import { NewReservation } from '../../models/new-reservation.model';
+import { ReservationService } from '../../../core/services/reservation.service';
+import { AuthService } from '../../../core/services/auth.service';
+import { SnackbarService } from '../../../core/services/snackbar.service';
+import { FlightService } from '../../../core/services/flight.service';
 
 @Component({
   selector: 'app-new-reservation-form',

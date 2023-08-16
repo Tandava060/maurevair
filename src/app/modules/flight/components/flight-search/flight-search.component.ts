@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable, combineLatest } from 'rxjs';
 import { debounceTime, map, startWith } from 'rxjs/operators';
-import { Airport } from 'src/app/modules/core/models/airport.model';
+import { Airport } from 'src/app/modules/core/models/airport/airport.model';
 import { AirportService } from 'src/app/modules/core/services/airport.service';
 import { FlightService } from 'src/app/modules/core/services/flight.service';
 
@@ -24,7 +24,7 @@ export class FlightSearchComponent implements OnInit {
   origin$!: Observable<Airport[]>;
   destination$!: Observable<Airport[]>;
 
-  constructor(private fb: FormBuilder, private airportService: AirportService, private flightService: FlightService) {}
+  constructor(private fb: FormBuilder, private airportService: AirportService, private flightService: FlightService) { }
 
   ngOnInit(): void {
     this.origin$ = this.createFilteredAirportsObservable('searchOrigin', 'destination');
@@ -50,7 +50,6 @@ export class FlightSearchComponent implements OnInit {
 
   searchFlights() {
     if (this.flightSearchForm.valid) {
-      console.log(this.flightSearchForm.value);
       const originId = (this.flightSearchForm.value.origin as unknown as Airport).id;
       const destinationId = (this.flightSearchForm.value.destination as unknown as Airport).id;
       this.flightService.getFlights(originId, destinationId);

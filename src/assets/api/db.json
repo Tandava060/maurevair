@@ -116,92 +116,12 @@
         {
           "id": 1,
           "class": "First",
-          "available": 10
+          "available": 0
         }
       ]
     }
   ],
   "reservations": [
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 1,
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 1,
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "flightId": 1,
-      "seatId": 2,
-      "noOfSeats": 1,
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 1,
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 3,
-      "id": 5
-    },
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 1,
-      "id": 6
-    },
-    {
-      "flightId": 1,
-      "seatId": 2,
-      "noOfSeats": 1,
-      "id": 7
-    },
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 1,
-      "id": 8
-    },
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 1,
-      "userId": 2,
-      "id": 9
-    },
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 3,
-      "userId": 2,
-      "id": 10
-    },
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 3,
-      "userId": 2,
-      "id": 11
-    },
-    {
-      "flightId": 1,
-      "seatId": 1,
-      "noOfSeats": 2,
-      "userId": 2,
-      "id": 12
-    },
     {
       "flightId": 1,
       "seatId": 1,
@@ -229,6 +149,13 @@
       "noOfSeats": 5,
       "userId": 2,
       "id": 16
+    },
+    {
+      "flightId": 4,
+      "seatId": 1,
+      "noOfSeats": 5,
+      "userId": 2,
+      "id": 17
     }
   ],
   "users": [

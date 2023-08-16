@@ -1,0 +1,20 @@
+
+<div *ngFor="let reservation of reservations$ | async;">
+    <mat-card [appearance]="'outlined'" class="reservation-card">
+
+        <mat-card-header>
+          <mat-card-title>{{reservation.flight.name}} - Flight No: {{reservation.flight.flightNo}}</mat-card-title>
+        </mat-card-header>
+    
+        <mat-card-content>
+          <p class="reservation-info">From: {{reservation.flight.origin}}</p>
+          <p class="reservation-info">To: {{reservation.flight.destination}}</p>
+          <div class="reservation-time">
+            <p class="reservation-info">Departure: {{reservation.flight.departureTime | date: 'short'}}</p>
+            <p class="reservation-info">Arrival: {{reservation.flight.arrivalTime | date: 'short'}}</p>
+          </div>
+          <p class="reservation-info">No of Seats booked: {{reservation.noOfSeats}}</p>
+        </mat-card-content>
+    
+    </mat-card>
+</div>

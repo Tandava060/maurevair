@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modules/login/login.component';
+import { UserReservationsComponent } from './modules/reservation/components/user-reservations/user-reservations.component';
+import { FlightComponent } from './modules/flight/flight.component';
+import { IsAuthenticatedGuard } from './modules/core/guards/is-authenticated.guard';
 
 const routes: Routes = [
   {
@@ -9,7 +12,18 @@ const routes: Routes = [
   },
   {
     path: 'flights',
-    loadChildren: () => import('./modules/flight/flight.module').then(m => m.FlightModule)
+    component: FlightComponent,
+    canActivate: [IsAuthenticatedGuard],
+  },
+  {
+    path: 'reservations',
+    component: UserReservationsComponent,
+    canActivate: [IsAuthenticatedGuard],
+  },
+  {
+    path: '',
+    redirectTo: '/flights',
+    pathMatch: 'full'
   }
 ];
 

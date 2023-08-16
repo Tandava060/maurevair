@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Flight } from '../core/models/flight.model';
+import { Flight } from '../core/models/flight/flight.model';
 import { FlightService } from '../core/services/flight.service';
 import { Observable } from 'rxjs';
 import { LoadingService } from '../core/services/loading.service';

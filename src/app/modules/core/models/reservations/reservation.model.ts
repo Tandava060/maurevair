@@ -1,7 +1,7 @@
+import { Flight } from "../flight/flight.model";
+
 export interface Reservation {
     id: number;
-    flightId: number;
-    seatId: number;
-    userId: number;
+    flight: Flight;
     noOfSeats: number;
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Airport } from '../models/airport.model';
+import { Airport } from '../models/airport/airport.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { Airport } from '../models/airport.model';
 export class AirportService {
   private airportApiUrl = 'api/airports';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAirports(): Observable<Airport[]> {
     return this.http.get<Airport[]>(this.airportApiUrl);

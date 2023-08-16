@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+    <span>Maurevair</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/flights" *ngIf="authService.isLoggedIn">Flights</button>
+    <button mat-button routerLink="/reservations" *ngIf="authService.isLoggedIn">My Reservations</button>
+    <button mat-button [routerLink]="['/login']" *ngIf="!authService.isLoggedIn">Login</button>
+    <button mat-button (click)="authService.logout()" *ngIf="authService.isLoggedIn">Logout</button>
+</mat-toolbar>
