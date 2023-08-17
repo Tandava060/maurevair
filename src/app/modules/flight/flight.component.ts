@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { Flight } from '../core/models/flight/flight.model';
 import { FlightService } from '../core/services/flight.service';
-import { Observable } from 'rxjs';
-import { LoadingService } from '../core/services/loading.service';
 
 @Component({
   selector: 'app-flight',
@@ -16,5 +13,5 @@ export class FlightComponent {
     this.initialLoad = false;
   }
 
-  constructor(public flightService: FlightService, public loadingService: LoadingService) { }
+  constructor(public flightService: FlightService) { }
 }

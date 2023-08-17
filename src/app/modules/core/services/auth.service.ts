@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { User, UserLogin } from '../models/user/user.model';
+import { BehaviorSubject, Observable, finalize, tap } from 'rxjs';
+import { User } from '../models/user/user.model';
+import { UserLogin } from "../models/user/UserLogin";
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import jwt_decode from "jwt-decode";
+import { LoadingService } from './loading.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class AuthService {
   private user$$: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
   public user$: Observable<User | null> = this.user$$.asObservable();
 
-  constructor(private httpClient: HttpClient, private router: Router) {
+  constructor(private httpClient: HttpClient, private router: Router, private loadingService: LoadingService) {
   }
 
   refreshUser(): void {
@@ -51,9 +53,11 @@ export class AuthService {
   login(user: UserLogin) {
     return this.httpClient.post<User>(this.api, user).pipe(
       tap((res) => {
+        this.loadingService.show();
         localStorage.setItem('user', JSON.stringify(res));
         this.user$$.next(res);
       }),
+      finalize(() => this.loadingService.stop())
     );
   }
 

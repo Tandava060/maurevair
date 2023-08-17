@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FlightComponent } from './flight.component';
 import { FlightService } from '../core/services/flight.service';
 import { LoadingService } from '../core/services/loading.service';

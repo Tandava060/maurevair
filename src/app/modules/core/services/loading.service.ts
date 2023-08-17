@@ -8,7 +8,7 @@ export class LoadingService {
   private loading$$ = new BehaviorSubject<boolean>(false);
   loading$ = this.loading$$.asObservable();
 
-  constructor() {}
+  constructor() { }
 
   show() {
     this.loading$$.next(true);

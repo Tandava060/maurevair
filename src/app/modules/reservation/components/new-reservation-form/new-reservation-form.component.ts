@@ -58,8 +58,7 @@ export class NewReservationFormComponent implements OnInit {
           this.flightService.updateFlight(this.flight, seatId, noOfSeats).subscribe();
           this.dialogRef.close();
         },
-        error: () => this.snackbarService.show('Reservation failed'),
-        complete: () => console.log('Reservation completed')
+        error: () => this.snackbarService.show('Reservation failed')
       });
     }
   }

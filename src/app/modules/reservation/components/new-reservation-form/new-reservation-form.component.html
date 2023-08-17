@@ -1,5 +1,5 @@
 <div style="margin:0rem 2rem 2.5rem 2rem;">
-    <h2 mat-dialog-title style="text-align: center;color: #3f51b5;">Reservation For Flight No {{flight.flightNo}}</h2>
+    <h2 mat-dialog-title class="title">Reservation For Flight No {{flight.flightNo}}</h2>
     <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="outline">
             <mat-label>Origin</mat-label>
@@ -19,7 +19,10 @@
         <mat-form-field appearance="outline">
             <mat-label>Seat Type</mat-label>
             <mat-select formControlName="seatType">
-                <mat-option *ngFor="let seat of flight.seats" [value]="seat.id">{{seat.class}}</mat-option>
+                <div *ngFor="let seat of flight.seats">
+                    <mat-option *ngIf="seat.available > 0" [value]="seat.id">{{seat.class}}</mat-option>
+                </div>
+                
             </mat-select>
             <mat-error *ngIf="hasError('seatType','required')">
                 Seat Type is required.

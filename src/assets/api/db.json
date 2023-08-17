@@ -38,12 +38,12 @@
         {
           "id": 1,
           "class": "First",
-          "available": 1
+          "available": 4
         },
         {
           "id": 2,
           "class": "PremiumEconomy",
-          "available": 10
+          "available": 9
         },
         {
           "id": 3,
@@ -156,6 +156,27 @@
       "noOfSeats": 5,
       "userId": 2,
       "id": 17
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 1,
+      "userId": 2,
+      "id": 18
+    },
+    {
+      "flightId": 1,
+      "seatId": 1,
+      "noOfSeats": 1,
+      "userId": 2,
+      "id": 19
+    },
+    {
+      "flightId": 1,
+      "seatId": 2,
+      "noOfSeats": 1,
+      "userId": 2,
+      "id": 20
     }
   ],
   "users": [

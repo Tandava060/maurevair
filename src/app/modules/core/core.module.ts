@@ -2,19 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
-
-
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
     SharedModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    SpinnerComponent
   ]
 })
 export class CoreModule { }

@@ -1,13 +1,11 @@
 <app-flight-search (searchedFlights)="onSearch()" />
 
 <div class="flight-container" *ngIf="flightService.flights$ | async as flights;">
-  <ng-container *ngIf="!(loadingService.loading$ | async)"> 
+  <ng-container> 
     <div *ngIf="!flights.length && !initialLoad" class="message">No flights available.</div>
     <div *ngIf="initialLoad" class="message">Search for a flight between an origin and destination.</div>
-    <app-flight-details *ngFor="let flight of flights" [flight]="flight" />
+    <div *ngIf="!initialLoad">
+      <app-flight-details *ngFor="let flight of flights" [flight]="flight" />
+    </div>
   </ng-container>
-</div>
-
-<div *ngIf="loadingService.loading$ | async" class="spinner">
-  <mat-spinner />
 </div>
